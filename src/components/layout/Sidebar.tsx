@@ -23,13 +23,17 @@ export default function Sidebar() {
           />
         </Link>
 
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="mt-8 w-full rounded-full bg-black py-3 font-medium text-white shadow-sm"
-        >
-          Create Assignment
-        </motion.button>
+        <Link href="/create-assignment">
+
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="mt-8 w-full rounded-full bg-black py-3 font-medium text-white shadow-sm"
+          >
+            Create Assignment
+          </motion.button>
+
+        </Link>
 
         <div className="mt-12 space-y-4 text-zinc-500">
 
@@ -49,12 +53,16 @@ export default function Sidebar() {
             My Groups
           </motion.p>
 
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            className="rounded-xl bg-zinc-100 px-4 py-3 font-semibold text-black"
-          >
-            Assignments
-          </motion.div>
+          <Link href="/assignments">
+
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="cursor-pointer rounded-xl bg-zinc-100 px-4 py-3 font-semibold text-black"
+            >
+              Assignments
+            </motion.div>
+
+          </Link>
 
           <motion.p
             whileHover={{ x: 4 }}

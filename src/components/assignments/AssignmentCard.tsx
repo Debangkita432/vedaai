@@ -1,9 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import AssignmentDropdown from "./AssignmentDropdown";
 
-export default function AssignmentCard() {
+interface AssignmentCardProps {
+  subject: string;
+  topic: string;
+  difficulty: string;
+  status: string;
+}
+
+export default function AssignmentCard({
+  subject,
+  topic,
+  difficulty,
+  status,
+}: AssignmentCardProps) {
   return (
     <motion.div
       whileHover={{ y: -4 }}
@@ -13,17 +26,27 @@ export default function AssignmentCard() {
       <div className="flex items-start justify-between">
 
         <div>
-          <h2 className="text-xl font-semibold text-zinc-900">
-            Physics Mid-Term Assessment
-          </h2>
+
+          <div className="flex items-center gap-3">
+
+            <h2 className="text-xl font-semibold text-zinc-900">
+              {subject} Assignment
+            </h2>
+
+            <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 capitalize">
+              {status}
+            </span>
+
+          </div>
+
+          <p className="mt-3 text-sm font-medium text-zinc-700">
+            Topic: {topic}
+          </p>
 
           <p className="mt-2 text-sm text-zinc-500">
-            Assigned on 21 March 2026
+            Difficulty: {difficulty}
           </p>
 
-          <p className="mt-1 text-sm text-zinc-500">
-            Due on 25 March 2026
-          </p>
         </div>
 
         <AssignmentDropdown />

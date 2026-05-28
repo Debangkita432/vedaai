@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db";
 import { assignmentQueue } from "./queues/assignmentQueue";
 
+import assignmentRoutes from "./routes/assignmentRoutes";
+
 import "./workers/assignmentWorker";
 
 dotenv.config();
@@ -20,6 +22,8 @@ const startServer = async () => {
   app.use(cors());
 
   app.use(express.json());
+
+  app.use("/api/assignments", assignmentRoutes);
 
   app.get("/", (_req, res) => {
     res.send("VedaAI Backend Running");

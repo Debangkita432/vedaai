@@ -1,5 +1,7 @@
 import { Worker } from "bullmq";
 
+import Assignment from "../models/Assignment";
+
 console.log("Worker Started");
 
 const worker = new Worker(
@@ -13,6 +15,20 @@ const worker = new Worker(
 
     await new Promise((resolve) =>
       setTimeout(resolve, 5000)
+    );
+
+    const generatedQuestions = [
+      "Define electrolysis.",
+      "Explain electroplating.",
+      "What are electrolytes?",
+    ];
+
+    await Assignment.findByIdAndUpdate(
+      job.data.assignmentId,
+      {
+        status: "completed",
+        generatedQuestions,
+      }
     );
 
     console.log("Assignment Generated");

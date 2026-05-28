@@ -3,18 +3,20 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export default function Sidebar() {
+interface SidebarProps {
+  onClose?: () => void;
+}
+
+export default function Sidebar({ onClose }: SidebarProps) {
   return (
     <motion.div
       initial={{ x: -80, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed left-0 top-0 flex h-screen w-65 flex-col justify-between border-r border-zinc-200 bg-white p-5"
+      className="fixed left-0 top-0 flex h-screen w-72 flex-col justify-between border-r border-zinc-200 bg-white p-5"
     >
-
       <div>
-
-        <Link href="/">
+        <Link href="/" onClick={onClose}>
           <motion.img
             whileHover={{ scale: 1.04 }}
             src="/vedaai.png"
@@ -23,8 +25,7 @@ export default function Sidebar() {
           />
         </Link>
 
-        <Link href="/create-assignment">
-
+        <Link href="/create-assignment" onClick={onClose}>
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
@@ -32,12 +33,10 @@ export default function Sidebar() {
           >
             Create Assignment
           </motion.button>
-
         </Link>
 
         <div className="mt-12 space-y-4 text-zinc-500">
-
-          <Link href="/">
+          <Link href="/" onClick={onClose}>
             <motion.p
               whileHover={{ x: 4 }}
               className="cursor-pointer rounded-xl px-4 py-3 transition hover:bg-zinc-100 hover:text-black"
@@ -53,15 +52,13 @@ export default function Sidebar() {
             My Groups
           </motion.p>
 
-          <Link href="/assignments">
-
+          <Link href="/assignments" onClick={onClose}>
             <motion.div
               whileHover={{ scale: 1.01 }}
               className="cursor-pointer rounded-xl bg-zinc-100 px-4 py-3 font-semibold text-black"
             >
               Assignments
             </motion.div>
-
           </Link>
 
           <motion.p
@@ -77,7 +74,6 @@ export default function Sidebar() {
           >
             My Library
           </motion.p>
-
         </div>
       </div>
 
@@ -93,7 +89,6 @@ export default function Sidebar() {
           Bokaro Steel City
         </p>
       </motion.div>
-
     </motion.div>
   );
 }

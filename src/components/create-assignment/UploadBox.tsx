@@ -3,7 +3,31 @@
 import { motion } from "framer-motion";
 import { UploadCloud } from "lucide-react";
 
-export default function UploadBox() {
+interface UploadBoxProps {
+  setSelectedFile: (
+    file: File | null
+  ) => void;
+}
+
+export default function UploadBox({
+  setSelectedFile,
+}: UploadBoxProps) {
+
+  const handleFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+
+    const file =
+      event.target.files?.[0];
+
+    if (file) {
+
+      setSelectedFile(file);
+
+    }
+
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.005 }}
@@ -24,8 +48,16 @@ export default function UploadBox() {
         JPEG, PNG, PDF upto 10MB
       </p>
 
-      <button className="mt-6 rounded-full bg-white px-6 py-3 font-medium shadow-sm transition hover:scale-105">
+      <button className="mt-6 rounded-full bg-white px-6 py-3 font-medium shadow-sm transition hover:scale-105 relative overflow-hidden">
+
         Browse Files
+
+        <input
+          type="file"
+          onChange={handleFileChange}
+          className="absolute inset-0 cursor-pointer opacity-0"
+        />
+
       </button>
 
       <p className="mt-6 text-sm text-zinc-500">

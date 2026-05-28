@@ -10,17 +10,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.16.1",
     "bullmq": "^5.77.6",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "ioredis": "^5.7.0",
-    "mongoose": "^8.18.0"
+    "mammoth": "^1.12.0",
+    "mongoose": "^8.18.0",
+    "multer": "^2.1.1",
+    "openai": "^6.39.0",
+    "pdf-parse": "^1.0.9",
+    "pdfkit": "^0.18.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.3",
+    "@types/multer": "^2.1.0",
     "@types/node": "^24.6.0",
+    "@types/pdfkit": "^0.17.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   }

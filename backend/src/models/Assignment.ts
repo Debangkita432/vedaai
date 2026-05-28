@@ -7,7 +7,7 @@ const assignmentSchema = new mongoose.Schema(
       required: true,
     },
 
-    class: {
+    className: {
       type: String,
       required: true,
     },
@@ -31,6 +31,17 @@ const assignmentSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
+
+    uploadedFile: {
+      type: String,
+      default: "",
+    },
+
+    generatedPdf: {
+      type: String,
+      default: "",
+    },
+
   },
 
   {
@@ -39,7 +50,9 @@ const assignmentSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model(
+const Assignment = mongoose.model(
   "Assignment",
   assignmentSchema
 );
+
+export default Assignment;

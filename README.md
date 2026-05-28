@@ -1,7 +1,6 @@
 <div align="center">
 
 <!-- LOGO / BANNER PLACEHOLDER -->
-<img src="./screenshots/banner.png" alt="AssignAI Banner" width="100%" />
 
 <br/>
 

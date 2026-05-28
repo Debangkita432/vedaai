@@ -1,84 +1,42 @@
 "use client";
 
-import Link from "next/link";
-
 import {
-  LayoutDashboard,
-  Users,
-  FileText,
-  Library,
-  Plus,
-  X,
+  Bell,
+  Menu,
 } from "lucide-react";
 
-interface SidebarProps {
-  onClose?: () => void;
+interface NavbarProps {
+  onMenuClick?: () => void;
 }
 
-export default function Sidebar({
-  onClose,
-}: SidebarProps) {
-
-  const navItems = [
-    {
-      title: "Home",
-      href: "/",
-      icon: LayoutDashboard,
-    },
-    {
-      title: "My Groups",
-      href: "/groups",
-      icon: Users,
-    },
-    {
-      title: "Assignments",
-      href: "/assignments",
-      icon: FileText,
-      active: true,
-    },
-    {
-      title: "My Library",
-      href: "/library",
-      icon: Library,
-    },
-  ];
+export default function Navbar({
+  onMenuClick,
+}: NavbarProps) {
 
   return (
-    <aside
+    <nav
       className="
-        fixed left-0 top-0 z-40
-        flex h-screen w-72
-        flex-col
-        border-r border-zinc-200
-        bg-white
-        px-5 py-6
+        sticky top-0 z-30
+        flex h-16 items-center justify-between
+        border-b border-zinc-200
+        bg-white/90
+        px-4
+        backdrop-blur-md
+
+        md:m-4
+        md:rounded-2xl
+        md:border
       "
     >
 
-      {/* ================= TOP ================= */}
+      {/* LEFT */}
+      <div className="flex items-center gap-3">
 
-      <div className="flex items-center justify-between">
-
-        {/* LOGO */}
-        <Link
-          href="/"
-          className="flex items-center gap-3"
-        >
-
-          <img
-            src="/vedaai.png"
-            alt="VedaAI"
-            className="h-10 w-auto"
-          />
-
-        </Link>
-
-        {/* MOBILE CLOSE BUTTON */}
+        {/* MOBILE MENU */}
         <button
-          onClick={onClose}
+          onClick={onMenuClick}
           className="
-            flex h-10 w-10
-            items-center justify-center
+            flex h-10 w-10 items-center justify-center
             rounded-xl
             border border-zinc-200
             bg-zinc-50
@@ -88,93 +46,57 @@ export default function Sidebar({
             md:hidden
           "
         >
-
-          <X size={18} />
-
+          <Menu size={20} />
         </button>
+
+        <div>
+
+          <h1 className="text-lg font-bold">
+            Assignments
+          </h1>
+
+        </div>
 
       </div>
 
-      {/* ================= CREATE BUTTON ================= */}
-
-      <Link
-        href="/create-assignment"
-        className="mt-8"
-      >
+      {/* RIGHT */}
+      <div className="flex items-center gap-3">
 
         <button
           className="
-            flex w-full
-            items-center justify-center gap-2
-            rounded-2xl
-            bg-black
-            px-5 py-4
-            text-sm font-medium
-            text-white
-            shadow-lg
-            transition-all duration-300
-
-            hover:scale-[1.02]
-            hover:bg-zinc-800
-
-            active:scale-95
+            relative
+            flex h-10 w-10 items-center justify-center
+            rounded-xl
+            border border-zinc-200
+            bg-zinc-50
           "
         >
 
-          <Plus size={18} />
+          <Bell size={18} />
 
-          Create Assignment
+          <span
+            className="
+              absolute right-2 top-2
+              h-2 w-2 rounded-full
+              bg-orange-500
+            "
+          />
 
         </button>
 
-      </Link>
+        <div
+          className="
+            flex h-10 w-10 items-center justify-center
+            rounded-full
+            bg-black
+            text-sm font-semibold text-white
+          "
+        >
+          JD
+        </div>
 
-      {/* ================= NAVIGATION ================= */}
+      </div>
 
-      <nav className="mt-10 flex flex-col gap-2">
-
-        {navItems.map((item, index) => {
-
-          const Icon =
-            item.icon;
-
-          return (
-            <Link
-              key={index}
-              href={item.href}
-            >
-
-              <div
-                className={`
-                  group flex items-center gap-3
-                  rounded-2xl
-                  px-4 py-3
-                  text-sm font-medium
-                  transition-all duration-300
-
-                  ${
-                    item.active
-                      ? "bg-zinc-100 text-black"
-                      : "text-zinc-500 hover:bg-zinc-100 hover:text-black"
-                  }
-                `}
-              >
-
-                <Icon size={18} />
-
-                <span>
-                  {item.title}
-                </span>
-
-              </div>
-
-            </Link>
-          );
-
-        })}
-
-      </nav>
-
-    </aside>
+    </nav>
   );
 }

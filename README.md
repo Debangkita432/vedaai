@@ -757,7 +757,7 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <div align="center">
 
-Made with ❤️ by educators, for educators.
+Made with ❤️ by Debangkita, for educators.
 
 **[⬆ Back to Top](#-assignai)**
 

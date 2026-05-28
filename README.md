@@ -4,7 +4,7 @@
 
 <br/>
 
-#  vedaAI
+#  VedaAI
 
 ### *AI-Powered Assignment & Question Paper Generator*
 
@@ -29,7 +29,7 @@
 
 <br/>
 
-> **AssignAI** is a production-grade SaaS platform that lets educators generate structured, AI-powered assignments and question papers in seconds — with real-time progress tracking, queue-based processing, and beautiful exam-style rendering.
+> **VedaAI** is a production-grade SaaS platform that lets educators generate structured, AI-powered assignments and question papers in seconds — with real-time progress tracking, queue-based processing, and beautiful exam-style rendering.
 
 </div>
 
@@ -65,7 +65,7 @@ Creating high-quality, well-structured assignments and question papers is a time
 - Formatting papers to institutional standards
 - Managing multiple class assignments simultaneously
 
-**AssignAI eliminates this bottleneck** by leveraging LLMs (Gemini / OpenAI) to generate fully structured, syllabus-aligned question papers in seconds — all via an intuitive SaaS dashboard with real-time progress updates and professional PDF export.
+**VedaAI eliminates this bottleneck** by leveraging LLMs (Gemini / OpenAI) to generate fully structured, syllabus-aligned question papers in seconds — all via an intuitive SaaS dashboard with real-time progress updates and professional PDF export.
 
 ---
 
@@ -199,7 +199,7 @@ Frontend renders exam-paper UI
 ## 📁 Folder Structure
 
 ```
-assignai/
+VedaAI/
 │
 ├── apps/
 │   ├── web/                          # Next.js 15 Frontend
@@ -294,8 +294,8 @@ assignai/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/assignai.git
-cd assignai
+git clone https://github.com/yourusername/VedaAI.git
+cd VedaAI
 ```
 
 ### 2. Install Dependencies
@@ -361,7 +361,7 @@ PORT=4000
 NODE_ENV=development
 
 # MongoDB
-MONGODB_URI=mongodb://localhost:27017/assignai
+MONGODB_URI=mongodb://localhost:27017/VedaAI
 
 # Redis
 REDIS_HOST=localhost
@@ -490,7 +490,7 @@ Authorization: Bearer <token>
 
 ## 🔄 Queue Workflow
 
-AssignAI uses **BullMQ** backed by **Redis** for reliable async job processing.
+VedaAI uses **BullMQ** backed by **Redis** for reliable async job processing.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -563,7 +563,7 @@ export const assignmentWorker = new Worker(
 
 ## 🔌 WebSocket Explanation
 
-AssignAI uses **Socket.io** for real-time bi-directional communication between the backend worker and the frontend client.
+VedaAI uses **Socket.io** for real-time bi-directional communication between the backend worker and the frontend client.
 
 ### Connection Flow
 
@@ -759,6 +759,6 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 Made with ❤️ by Debangkita, for educators.
 
-**[⬆ Back to Top](#-assignai)**
+**[⬆ Back to Top](#-VedaAI)**
 
 </div>

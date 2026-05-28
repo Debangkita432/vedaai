@@ -5,7 +5,7 @@
 
 <br/>
 
-# ⚡ AssignAI
+# ⚡ vedaAI
 
 ### *AI-Powered Assignment & Question Paper Generator*
 

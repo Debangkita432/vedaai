@@ -295,18 +295,7 @@ export default function AssignmentForm() {
 
       <div className="mb-8 md:mb-10">
 
-        <div
-          className="
-            inline-flex items-center gap-2
-            rounded-full
-            border border-zinc-200
-            bg-zinc-100
-            px-4 py-2
-            text-xs font-medium text-zinc-600
-          "
-        >
-          AI Assignment Generator
-        </div>
+     
 
         <h1
           className="
@@ -323,7 +312,7 @@ export default function AssignmentForm() {
         </h1>
 
         <p className="mt-3 text-sm text-zinc-500 sm:text-base">
-          Generate smart AI-powered assignments in seconds
+          Generate smart AI powered assignments in seconds
         </p>
 
       </div>

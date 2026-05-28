@@ -647,25 +647,7 @@ AI generation is **slow and unpredictable** — it can take 5–30 seconds per r
 
 > BullMQ is chosen over alternatives (Bee-Queue, Agenda, etc.) for its TypeScript-first API, robust retry semantics, job priority support, and active maintenance.
 
----
 
-## 📸 Screenshots
-
-> *(Replace with actual screenshots after deployment)*
-
-| Dashboard | Create Assignment |
-|---|---|
-| ![Dashboard](./screenshots/dashboard.png) | ![Create](./screenshots/create.png) |
-
-| Real-Time Progress | Exam Paper View |
-|---|---|
-| ![Progress](./screenshots/progress.png) | ![Paper](./screenshots/paper.png) |
-
-| Analytics | PDF Export |
-|---|---|
-| ![Analytics](./screenshots/analytics.png) | ![PDF](./screenshots/pdf.png) |
-
----
 
 ## 🔭 Future Improvements
 
